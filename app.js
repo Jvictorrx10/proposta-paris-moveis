@@ -134,6 +134,10 @@
 
   // As entradas ao rolar ficam no motion.js (GSAP).
 
+  // WhatsApp flutuante: no celular, desce para o canto quando o topo sai da tela.
+  const waf = $('.wa-float'), heroEl = $('.hero');
+  if (waf && 'IntersectionObserver' in window) new IntersectionObserver(([e]) => waf.classList.toggle('low', !e.isIntersecting)).observe(heroEl);
+
   renderAmb();
   renderQuote();
   renderLoja();
