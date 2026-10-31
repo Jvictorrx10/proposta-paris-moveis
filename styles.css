@@ -5,7 +5,7 @@
   --paper: #f7f4ef;
   --ink: #1c1a17;
   --muted: #4b463f;
-  --accent: #1f5c49;      /* verde-escuro: só no botão de orçamento */
+  --accent: #5e1414;      /* vinho da marca Paris (site atual) */
   --accent-ink: #ffffff;
   --field: #1b1b1c;
   --field-ink: #ffffff;
@@ -42,9 +42,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
   background: var(--accent); color: var(--accent-ink); min-height: 54px; padding: 14px 28px;
   transition: background .2s, transform .15s var(--ease);
 }
-.btn:hover { background: #17483a; }
+.btn:hover { background: #471010; }
 .btn:active { transform: scale(.98); }
-.btn:disabled { background: #8a958f; cursor: not-allowed; }
+.btn:disabled { background: #9a8585; cursor: not-allowed; }
 .btn-wide { width: 100%; }
 
 /* Topo */
@@ -178,11 +178,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .footer-top { display: flex; justify-content: space-between; gap: 32px; font-size: var(--step-small); line-height: 1.6; }
 .wordmark-sm { font-family: var(--display); font-size: 1.8rem; text-transform: uppercase; }
 .footer-phone {
-  margin-top: auto; font-family: var(--display); font-size: clamp(3.5rem, 12vw, 13rem); line-height: 0.95;
+  margin-top: auto; font-family: var(--display); font-size: clamp(3.5rem, 18.4vw, 22rem); line-height: 0.95;
   text-decoration: none; white-space: nowrap; transition: opacity .2s;
 }
 .footer-phone:hover { opacity: .8; }
-.footer-meta { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 16px; margin-top: 28px; font-size: var(--step-small); color: #d4e3dc; }
+.footer-meta { display: grid; grid-template-columns: 1fr 2fr 1fr; gap: 16px; margin-top: 28px; font-size: var(--step-small); color: #ecd3d3; }
 .footer-meta span:nth-child(2) { text-align: center; }
 .footer-meta span:last-child { text-align: right; }
 
