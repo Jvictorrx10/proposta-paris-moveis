@@ -32,7 +32,14 @@
     "sameAs": ["https://www.instagram.com/paris_moveis_planejados/", "https://www.facebook.com/parismoveiseplanejados"]
   }
   </script>
-  <script>document.documentElement.classList.add('js')</script>
+  <script>
+    // Movimento (GSAP). Se não carregar em 2,5s, mostra tudo parado.
+    document.documentElement.classList.add('js');
+    setTimeout(() => { if (!document.documentElement.classList.contains('motion')) document.documentElement.classList.add('no-motion'); }, 2500);
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="motion.js" defer></script>
 </head>
 <body>
   <p class="demo-bar">Proposta de site — demonstração. Fotos ilustrativas.</p>
@@ -50,8 +57,8 @@
       <a class="nav-action" href="#orcamento">Quero um orçamento</a>
     </nav>
     <div class="hero-text">
-      <h1>Seu projeto,<br>no prazo.</h1>
-      <p class="hero-line"><span>Móveis planejados 100% MDF</span><span>em São José dos Pinhais e Curitiba</span></p>
+      <h1><span class="ln"><span>Seu projeto,</span></span><span class="ln"><span>no prazo.</span></span></h1>
+      <p class="hero-line intro"><span>Móveis planejados 100% MDF</span><span>em São José dos Pinhais e Curitiba</span></p>
     </div>
     <a class="hero-cta" href="#orcamento">Quero um orçamento</a>
     <p class="hero-caption">Imagem ilustrativa</p>
@@ -70,6 +77,7 @@
 
     <!-- Como funciona: três fotos em diagonal -->
     <section class="how" id="como-funciona" aria-labelledby="how-title">
+      <p class="backtype" aria-hidden="true">SOB MEDIDA · SOB MEDIDA</p>
       <h2 id="how-title" class="reveal">Do projeto à montagem</h2>
       <div class="how-step s1">
         <img src="https://images.unsplash.com/photo-1659930087003-2d64e33181f7?w=900&h=1200&fit=crop&fm=webp&q=70" width="900" height="1200" alt="Mãos marcando com lápis uma linha em uma tábua de madeira (imagem ilustrativa)" loading="lazy">
@@ -87,9 +95,9 @@
 
     <!-- Prova: nomes em colunas -->
     <section class="proof" aria-labelledby="proof-title">
-      <h2 id="proof-title" class="reveal">649 avaliações</h2>
+      <h2 id="proof-title" class="reveal"><span data-count="649">649</span> avaliações</h2>
       <div class="proof-cols">
-        <p class="reveal"><span class="soft">No Google</span><br>Nota 4,8<br>649 avaliações<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Paris+M%C3%B3veis+Planejados+Av.+Rui+Barbosa+9025+S%C3%A3o+Jos%C3%A9+dos+Pinhais" target="_blank" rel="noopener">Ler as avaliações</a></p>
+        <p class="reveal"><span class="soft">No Google</span><br>Nota <span data-count="4.8" data-dec="1">4,8</span><br>649 avaliações<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Paris+M%C3%B3veis+Planejados+Av.+Rui+Barbosa+9025+S%C3%A3o+Jos%C3%A9+dos+Pinhais" target="_blank" rel="noopener">Ler as avaliações</a></p>
         <p class="reveal"><span class="soft">O que elogiam</span><br>Projeto<br>Prazo cumprido<br>Atendimento<br>Negociação</p>
         <p class="reveal"><span class="soft">Material</span><br>100% MDF<br>Berneck<br>Arauco<br>Guararapes<br>Sudati</p>
         <p class="reveal"><span class="soft">Pagamento</span><br>Até 36x no boleto<br>Até 18x no cartão<br>Construcard<br>1ª parcela em até 120 dias</p>

@@ -29,6 +29,7 @@
       <figure class="main"><img src="${img(f1, 1400, 875)}" width="1400" height="875" alt="${amb.nome} planejada (imagem ilustrativa)"><figcaption>Imagem ilustrativa</figcaption></figure>
       ${f2 ? `<figure class="side"><img src="${img(f2, 700, 525)}" width="700" height="525" alt="" loading="lazy"></figure>` : ''}
       <div class="text"><p>${amb.texto}</p><a href="#orcamento" data-pick="${amb.id}">Orçar ${amb.nome.toLowerCase()}</a></div>`;
+    document.dispatchEvent(new CustomEvent('paris:ambiente'));
   }
   tabs.addEventListener('click', e => {
     const b = e.target.closest('[data-amb]'); if (!b) return;
@@ -131,19 +132,7 @@
     loja = D.lojas.find(l => l.id === b.dataset.loja); renderLoja();
   });
 
-  // ---------- Entradas ----------
-  const io = 'IntersectionObserver' in window && new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (!en.isIntersecting) return;
-      en.target.classList.add('is-in');
-      io.unobserve(en.target);
-    });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  $$('.reveal').forEach(el => {
-    const sib = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
-    el.style.transitionDelay = `${sib.indexOf(el) * 80}ms`;
-    if (io) io.observe(el); else el.classList.add('is-in');
-  });
+  // As entradas ao rolar ficam no motion.js (GSAP).
 
   renderAmb();
   renderQuote();
